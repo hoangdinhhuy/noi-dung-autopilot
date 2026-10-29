@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hoangdinhhuy.github.io/noi-dung-autopilot/sitemap.xml
