@@ -1,0 +1,43 @@
+name: Giám sát sống còn
+
+on:
+  schedule:
+    # 02:30 UTC thứ Hai = 09:30 sáng thứ Hai giờ Việt Nam
+    - cron: "30 2 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+concurrency:
+  group: healthcheck
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Kiểm tra người dùng + ngân sách, tự đóng nếu hết đường
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python generator/healthcheck.py
+
+      - name: Lưu nhật ký sức khoẻ
+        run: |
+          git config user.name "noi-dung-bot"
+          git config user.email "bot@noi-dung.local"
+          git add config/ index.html goodbye.html
+          if git diff --cached --quiet; then
+            echo "Không có thay đổi."
+          else
+            git commit -m "healthcheck tuần $(date -u +%F)"
+            git push
+          fi
