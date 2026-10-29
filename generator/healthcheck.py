@@ -72,9 +72,14 @@ def tuan_kem_lien_tiep() -> int:
     if not LOG_PATH.exists():
         return 0
     lines = [json.loads(l) for l in LOG_PATH.read_text(encoding="utf-8").splitlines() if l.strip()]
+    # Gộp theo ngày (kết quả cuối của mỗi ngày thắng) — chạy tay nhiều lần
+    # trong một ngày không được đếm thành nhiều tuần kém ảo.
+    theo_ngay: dict[str, str] = {}
+    for dong in lines:
+        theo_ngay[dong["ngay"]] = dong["ket_qua_tuan"]
     dem = 0
-    for dong in reversed(lines):
-        if dong["ket_qua_tuan"] == "kem":
+    for ket_qua in reversed(list(theo_ngay.values())):
+        if ket_qua == "kem":
             dem += 1
         else:
             break
