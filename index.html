@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chợ Nội Dung — Bot nội dung miễn phí cho người bán TikTok Shop &amp; Shopee</title>
+<meta name="description" content="Mỗi ngày 3 kịch bản video TikTok + caption + hashtag miễn phí cho người bán nhỏ. Bot chạy tự động, miễn phí 100%.">
+<style>
+  :root{
+    --bg:#faf9f7; --ink:#1a1a1a; --muted:#6b6b6b; --card:#ffffff;
+    --line:#e7e3dc; --accent:#c2410c; --accent-soft:#fff1e7; --ok:#166534;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:880px;margin:0 auto;padding:24px 20px 80px}
+  header{padding:28px 0 20px;border-bottom:2px solid var(--ink)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:8px 0 10px;font-weight:800}
+  .sub{color:var(--muted);font-size:16px;max-width:640px}
+  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;padding:3px 10px;border-radius:999px;margin-top:12px}
+  section{margin-top:36px}
+  h2{font-size:20px;font-weight:800;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  .card h3{font-size:17px;margin-bottom:2px}
+  .meta{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .line{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line);font-size:15px}
+  .line b{min-width:118px;font-size:12px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;padding-top:2px}
+  .khung{font-size:13px;color:var(--muted);margin-top:10px}
+  .khung span{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-right:6px;display:inline-block;margin-top:6px}
+  .btn{border:0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;background:var(--ink);color:#fff}
+  .btn:hover{background:#000}
+  .btn.copy.ok{background:var(--ok)}
+  .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .tags{margin-top:12px;font-size:13.5px;color:#334155}
+  .archive a{display:flex;justify-content:space-between;padding:10px 14px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;text-decoration:none;color:var(--ink);font-size:14.5px}
+  .archive a:hover{border-color:var(--ink)}
+  .note{background:var(--accent-soft);border-radius:12px;padding:16px 18px;font-size:14.5px}
+  .note b{color:var(--accent)}
+  .qr{margin-top:10px;padding:14px;border:1px dashed var(--line);border-radius:10px;font-size:14px;color:var(--muted)}
+  footer{margin-top:60px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted)}
+  footer a{color:var(--accent)}
+  .loading{color:var(--muted);font-size:15px}
+  .paid{border:2px solid var(--ink);background:#fffdf6}
+  .paid .price{font-weight:800;font-size:22px;margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Chợ Nội Dung</div>
+  <h1>Bot nội dung mỗi ngày cho người bán TikTok Shop &amp; Shopee</h1>
+  <p class="sub">Mỗi sáng, bot tự viết <b>3 kịch bản video ngắn</b> (hook → nỗi đau → demo → CTA) kèm caption và hashtag theo ngách bán hàng của bạn. Chọn bài, bấm copy, quay theo khung gợi ý — xong.</p>
+  <span class="badge">Miễn phí 100% · cập nhật 8:30 sáng mỗi ngày · không cần đăng ký</span>
+</header>
+
+<section>
+  <h2 id="hom-nay">Gói hôm nay</h2>
+  <div id="latest" class="loading">Đang tải gói nội dung…</div>
+</section>
+
+<section>
+  <h2>Gói các ngày trước</h2>
+  <div id="archive" class="archive loading">Đang tải…</div>
+</section>
+
+<section>
+  <h2>Cách dùng trong 60 giây</h2>
+  <div class="card">
+    <div class="line"><b>1. Chọn ngách</b><span>Xem 3 bài hôm nay, bài nào đúng sản phẩm bạn bán thì dùng, không thì quay lại mai — bot luân phiên 12 ngách.</span></div>
+    <div class="line"><b>2. Copy</b><span>Bấm nút copy kịch bản + caption. Quay video theo khung thời gian gợi ý dưới mỗi bài.</span></div>
+    <div class="line"><b>3. Đăng</b><span>Đăng vào giờ vàng TikTok Shop (11h30–13h, 19h–22h), dán caption + hashtag.</span></div>
+    <div class="line"><b>4. Hỗ trợ bot</b><span>Nội dung miễn phí, nếu bạn thấy hữu ích, mua sản phẩm qua link affiliate bên dưới hoặc quét QR — tiền giúp bot chạy tiếp (và chúng tôi bỏ ra mua tool TTS khi đủ).</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Ủng hộ bot chạy tiếp</h2>
+  <div class="card">
+    <p>Bot chạy bằng hạ tầng miễn phí (GitHub), chi phí 0đ/tháng.  Nếu bạn kiếm được đơn đầu tiên nhờ nội dung ở đây, nhớ lại:</p>
+    <div class="qr">🔗 <b>Link affiliate:</b> sản phẩm đang được bán qua <a href="#" id="affiliate-link">kênh affiliate của bot</a> — mua qua link không tốn bạn thêm đồng nào, bot nhận % nhỏ từ sàn.</div>
+    <div class="qr">☕ <b>Mẹo mát tay:</b> chuyển khoản bất kỳ — Vietcombank <b>HOANG DINH HUY — 0123456789</b> (placeholder — thay QR thật vào <code>assets/qr.png</code> khi có).</div>
+  </div>
+</section>
+
+<section>
+  <h2>Gói Pro (sắp mở)</h2>
+  <div class="card paid">
+    <h3>Kho nội dung 30 ngày theo đúng ngách của bạn</h3>
+    <div class="price">99.000đ / gói</div>
+    <p style="color:var(--muted);font-size:14.5px">30 kịch bản viết riêng cho sản phẩm + lịch đăng + bộ hashtag theo từ khóa shop bạn. Mở bán khi trang này đạt 1.000 người dùng/tháng — nhắn trước để giữ chỗ: <b>zalo: 0123456789</b> (placeholder).</p>
+  </div>
+</section>
+
+<footer>
+  Chợ Nội Dung — bot chạy tự động trên GitHub Actions, không ai ngồi viết bài. Nội dung chỉ là điểm khởi đầu, hãy kiểm chứng thông tin sản phẩm trước khi đăng.
+  · <a href="https://github.com/hoangdinhhuy/noi-dung-autopilot">Mã nguồn mở trên GitHub</a>
+</footer>
+
+</div>
+
+<script>
+const BASE = 'content';
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function copyBtn(text, label){
+  return `<button class="btn copy" data-text="${encodeURIComponent(text)}">${label}</button>`;
+}
+function renderBai(b, i){
+  const script = `HOOK (0-3s): ${b.hook}\nNỖI ĐAU (3-8s): ${b.noi_dau}\nGIẢI PHÁP + DEMO (8-25s): ${b.giai_phap}\nTẠO TIN CẬY (25-35s): ${b.tao_tin_cay}\nCTA (35-45s): ${b.cta}`;
+  const cap = `${b.caption}\n${(b.hashtags||[]).join(' ')}`;
+  return `<div class="card">
+    <h3>${i+1}. ${esc(b.ngach)} — ${esc(b.san_pham)}</h3>
+    <div class="meta">nguồn nội dung: ${b.nguon==='gemini'?'AI viết riêng hôm nay':'bộ mẫu tối ưu'} · mẹo quay: ${esc(b.khuyen_quay||'')}</div>
+    <div class="line"><b>Hook</b><span>${esc(b.hook)}</span></div>
+    <div class="line"><b>Nỗi đau</b><span>${esc(b.noi_dau)}</span></div>
+    <div class="line"><b>Giải pháp</b><span>${esc(b.giai_phap)}</span></div>
+    <div class="line"><b>Tin cậy</b><span>${esc(b.tao_tin_cay)}</span></div>
+    <div class="line"><b>CTA</b><span>${esc(b.cta)}</span></div>
+    <div class="khung">Quay theo khung: ${(b.khung||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
+    <div class="tags">Caption + hashtag: ${esc(b.caption)} ${esc((b.hashtags||[]).join(' '))}</div>
+    <div class="actions">${copyBtn(script,'📋 Copy kịch bản')}${copyBtn(cap,'📋 Copy caption + hashtag')}</div>
+  </div>`;
+}
+async function main(){
+  try{
+    const idx = await (await fetch(`${BASE}/index.json`)).json();
+    const latest = idx[0];
+    const data = await (await fetch(`${BASE}/${latest}.json`)).json();
+    document.getElementById('latest').className = '';
+    document.getElementById('latest').innerHTML =
+      `<div class="meta" style="margin-bottom:14px">Gói ngày <b>${data.ngay}</b> · sinh lúc 8:30 sáng tự động</div>` +
+      data.bai.map((b,i)=>renderBai(b,i)).join('');
+    const ar = document.getElementById('archive');
+    ar.className='archive';
+    ar.innerHTML = idx.slice(1,15).map(d=>`<a href="archive.html?ngay=${d}"><span>Gói ngày ${d}</span><span>3 bài →</span></a>`).join('')
+      || '<span style="color:var(--muted)">Chưa có gói cũ — quay lại ngày mai.</span>';
+  }catch(e){
+    document.getElementById('latest').textContent = 'Chưa tải được nội dung — bot có thể đang chạy. Thử lại sau ít phút.';
+  }
+}
+document.addEventListener('click', e=>{
+  const b = e.target.closest('button.copy');
+  if(!b) return;
+  navigator.clipboard.writeText(decodeURIComponent(b.dataset.text)).then(()=>{
+    const old=b.textContent; b.textContent='✓ Đã copy!'; b.classList.add('ok');
+    setTimeout(()=>{b.textContent=old;b.classList.remove('ok')},1500);
+  });
+});
+main();
+</script>
+</body>
+</html>

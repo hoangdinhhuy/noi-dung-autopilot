@@ -1,0 +1,41 @@
+name: Sinh nội dung mỗi ngày
+
+on:
+  schedule:
+    # 01:30 UTC = 08:30 giờ Việt Nam
+    - cron: "30 1 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-content
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sinh gói nội dung hôm nay
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python generator/generate.py
+
+      - name: Commit và push
+        run: |
+          git config user.name "noi-dung-bot"
+          git config user.email "bot@noi-dung.local"
+          git add content/
+          if git diff --cached --quiet; then
+            echo "Không có gói mới (đã tồn tại)."
+          else
+            git commit -m "gói nội dung ngày $(date -u +%F)"
+            git push
+          fi

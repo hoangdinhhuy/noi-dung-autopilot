@@ -1,0 +1,195 @@
+{
+  "niches": [
+    {
+      "id": "my-pham-thuan-thien",
+      "ten": "Mỹ phẩm thuần chay",
+      "san_pham": "son dưỡng thuần chay",
+      "khan_gia": "nữ 18-30 quan tâm thành phần lành tính",
+      "noi_dau": "sợ mua trúng hàng trôi nổi, da kích ứng",
+      "tu_khoa": [
+        "myphamthuanvuon",
+        "skincarevn",
+        "tiktokshopmypham",
+        "reviewthat",
+        "sonduong"
+      ],
+      "loi_khuyen": "quay cận cảnh kết cấu son, show bảng thành phần 3 giây"
+    },
+    {
+      "id": "do-nam-cong-so",
+      "ten": "Đồ nam công sở",
+      "san_pham": "áo sơ mi không nhăn",
+      "khan_gia": "nam 24-35 đi làm văn phòng",
+      "noi_dau": "sáng vội, ủi đồ mất thời gian, áo nhăn kém chuyên nghiệp",
+      "tu_khoa": [
+        "thoitrangcongso",
+        "docunam",
+        "aonomkhongnhan",
+        "oOTDnam",
+        "tiktokshopfashion"
+      ],
+      "loi_khuyen": "quay slow-motion vắt áo vào túi rồi lấy ra vẫn phẳng"
+    },
+    {
+      "id": "dung-cap-be",
+      "ten": "Đồ dùng cho bé",
+      "san_pham": "túi trữ sữa nóng lạnh",
+      "khan_gia": "mẹ bỉm 25-35",
+      "noi_dau": "ra ngoài cho bé bú không có chỗ trữ sữa, tiền mặt bằng sữa đổ đi",
+      "tu_khoa": [
+        "mebim",
+        "docube",
+        "chovamebe",
+        "tusuanonglanh",
+        "tiktokshopmebe"
+      ],
+      "loi_khuyen": "mở đầu bằng con số: 1 bình sữa đổ = 50k bay màu"
+    },
+    {
+      "id": "phu-kien-dien-thoai",
+      "ten": "Phụ kiện điện thoại",
+      "san_pham": "ốp lưng chống sốc mỏng",
+      "khan_gia": "18-35 dùng iPhone/Samsung",
+      "noi_dau": "rớt điện thoại vỡ màn hình sửa 3-5 triệu",
+      "tu_khoa": [
+        "phukiendienthoai",
+        "oplun",
+        "chongsoc",
+        "iphonetips",
+        "tiktokshopphukien"
+      ],
+      "loi_khuyen": "quay thử thách rớt điện thoại thật — video test luôn viral"
+    },
+    {
+      "id": "do-gia-dung-nha-bep",
+      "ten": "Đồ gia dụng nhà bếp",
+      "san_pham": "thớt gỗ chống khuẩn",
+      "khan_gia": "người nội trợ 25-45",
+      "noi_dau": "thớt cũ mốc đen, vi khuẩn dính vào thức ăn của con",
+      "tu_khoa": [
+        "dogiadung",
+        "nhabeponline",
+        "thotgo",
+        "mevabep",
+        "tiktokshopdogiadung"
+      ],
+      "loi_khuyen": "so sánh trước-sau cạo thớt cũ: hình ảnh sốc là hook mạnh nhất"
+    },
+    {
+      "id": "snack-an-vat",
+      "ten": "Đồ ăn vặt",
+      "san_pham": "trà chanh giòn gói ăn liền",
+      "khan_gia": "học sinh - sinh viên 15-24",
+      "noi_dau": "thèm ăn vặt lúc học bài mà quán đóng cửa",
+      "tu_khoa": [
+        "anvatngon",
+        "snackreview",
+        "trachanhgiom",
+        "reviewanvat",
+        "tiktokshopanvat"
+      ],
+      "loi_khuyen": "âm thanh giòn tan (ASMR) là 80% thành công của niche này"
+    },
+    {
+      "id": "van-phong-pham-xinh",
+      "ten": "Văn phòng phẩm decor",
+      "san_pham": "bút gel mực pastel bộ 6 màu",
+      "khan_gia": "học sinh nữ 14-22 thích decor",
+      "noi_dau": "ghi chép chán, không có động lực học, muốn sổ vở xinh như TikTok",
+      "tu_khoa": [
+        "vanphongpham",
+        "butgel",
+        "studymotivation",
+        "decorbanhoc",
+        "tiktokshopvpp"
+      ],
+      "loi_khuyen": "quay cận vệt mực viết trên giấy kèm nhạc lofi"
+    },
+    {
+      "id": "thoi-trang-nu-mua-re",
+      "ten": "Thời trang nữ giá rẻ",
+      "san_pham": "đầm suông che bụng dạng suông",
+      "khan_gia": "nữ 22-35, công sở + đi chơi",
+      "noi_dau": "mặc đẹp thì ngại, bụng to thì mất tự tin, đồ đẹp giá thì trời",
+      "tu_khoa": [
+        "thoitrangnu",
+        "damdep",
+        "anhdiencaotang",
+        "mixdo",
+        "tiktokshopnu"
+      ],
+      "loi_khuyen": "quay 3 kiểu phối với 1 đầm — kiểu '1 món 3 cách' giữ chân xem lâu"
+    },
+    {
+      "id": "cham-soc-toc",
+      "ten": "Chăm sóc tóc",
+      "san_pham": "dầu gội bồ kết phục hồi",
+      "khan_gia": "nữ 20-40 tóc hư tổn do nhuộm/uốn",
+      "noi_dau": "tóc gãy rụng sau nhuộm, xin kiểu gì cũng không vào",
+      "tu_khoa": [
+        "chamsoco",
+        "duoigoi",
+        "phuchoitoc",
+        "tocuoitoc",
+        "tiktokshoplamdep"
+      ],
+      "loi_khuyen": "quay tóc trước-sau sau 2 tuần — testimonial thật là vua"
+    },
+    {
+      "id": "dung-thu-cung",
+      "ten": "Đồ dùng thú cưng",
+      "san_pham": "cat tower nhỏ gọn chung cư",
+      "khan_gia": "người nuôi mèo ở chung cư 20-35",
+      "noi_dau": "mèo cào sofa nát, nhà nhỏ không có chỗ cho cat tower to",
+      "tu_khoa": [
+        "thucung",
+        "chomeo",
+        "cattower",
+        "petshopvn",
+        "tiktokshoppet"
+      ],
+      "loi_khuyen": "để mèo/phá tự nhiên trong video — mèo chính là marketing miễn phí"
+    },
+    {
+      "id": "dung-tap-luyen-tai-nha",
+      "ten": "Dụng cụ tập tại nhà",
+      "san_pham": "dây kháng lực bộ 5 cấp",
+      "khan_gia": "20-35 muốn tập nhưng không có thời gian phòng gym",
+      "noi_dau": "gym phí 600k/tháng, đi làm về mệt, bụng mỡ tăng",
+      "tu_khoa": [
+        "taptainha",
+        "daykhangluc",
+        "gymtacgia",
+        "fitnessvn",
+        "tiktokshopsuckhoe"
+      ],
+      "loi_khuyen": "quay theo dạng '7 ngày thử thách' — series giữ follower quay lại"
+    },
+    {
+      "id": "quat-ban-cong-mini",
+      "ten": "Quạt mini để bàn",
+      "san_pham": "quạt sạc không dây mini",
+      "khan_gia": "dân văn phòng, sinh viên 18-30",
+      "noi_dau": "trời nóng, phòng trọ không có điều hòa, quạt dây vướng víu",
+      "tu_khoa": [
+        "quatmini",
+        "quatdeban",
+        "docongnghere",
+        "sinhvien",
+        "tiktokshopdocongnghe"
+      ],
+      "loi_khuyen": "quay test pin thật: bật 6 tiếng, chèn timestamp để tạo niềm tin"
+    }
+  ],
+  "cau_truc_script": {
+    "hook_seconds": 3,
+    "do_dai": "30-45 giây",
+    "khung": [
+      "HOOK",
+      "NỖI ĐAU",
+      "GIẢI PHÁP + DEMO",
+      "TẠO TIN CẬY",
+      "CTA"
+    ]
+  }
+}
