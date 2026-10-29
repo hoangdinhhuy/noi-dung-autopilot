@@ -38,7 +38,17 @@ Chỉ dùng thư viện chuẩn Python, không cần cài gì.
 2. **Ủng hộ** — QR chuyển khoản cho người được bot giúp có đơn đầu tiên.
 3. **Gói Pro 99k** — kho nội dung 30 ngày viết riêng theo sản phẩm (mở khi có 1.000 người dùng/tháng).
 
-Nguyên tắc: mọi hạ tầng đều dùng bậc miễn phí vĩnh viễn → bot **không thể "cháy" vốn**.
+## Tự giám sát & tự đóng (kill-switch)
+
+Workflow **Giám sát sống còn** chạy 9:30 sáng thứ Hai hàng tuần (`generator/healthcheck.py`):
+
+- **Đo người dùng thật**: số người truy cập duy nhất 7 ngày qua (GitHub traffic API, cần secret `GH_PAT` — PAT cá nhân có scope `repo`; thiếu PAT thì tuần đó tính KÉM theo fail-safe).
+- **Đo ngân sách duy trì**: `vốn + doanh thu tích lũy - chi phí × số tháng` ghi trong `config/sustain.json`.
+- **Tự đóng khi**: ngân sách < 0đ, hoặc ≤ 20 người dùng/tuần kéo dài 8 tuần liên tiếp (đếm theo ngày phân biệt — chạy tay nhiều lần không đếm ảo).
+- **Khi tự đóng**: trang chủ đổi thành trang tạm biệt (`goodbye.html`), tắt cron sinh nội dung + tắt workflow giám sát, tạo issue "🛑 Dự án tự đóng" gửi email cho chủ repo. Nhật ký sức khoẻ lưu tại `config/vitality_log.jsonl`.
+- **Mở lại**: bật lại 2 workflow trong tab Actions, `git revert` commit đóng dự án, đặt `trang_thai: dang_chay` trong `config/sustain.json`.
+
+Nguyên tắc: mọi hạ tầng đều dùng bậc miễn phí vĩnh viễn → bot **không thể "cháy" vốn**;
 
 ## Cấu trúc
 
