@@ -27,7 +27,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CFG_PATH = ROOT / "config" / "sustain.json"
 LOG_PATH = ROOT / "config" / "vitality_log.jsonl"
 
-TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+TOKEN = (os.environ.get("GH_PAT") or os.environ.get("GH_TOKEN")
+         or os.environ.get("GITHUB_TOKEN"))
 REPO = os.environ.get("GITHUB_REPOSITORY", "hoangdinhhuy/noi-dung-autopilot")
 API = f"https://api.github.com/repos/{REPO}"
 
@@ -131,8 +132,11 @@ def main():
     # --- Chỉ số 1: người dùng thật ---
     uniques = doc_nguoi_dung_7ngay()
     nguong = cfg["nguong_nguoi_dung_toi_thieu_tuan"]
-    kem = uniques != -1 and uniques < nguong
-    print(f"Người dùng duy nhất 7 ngày: {uniques} (ngưỡng {nguong}) → {'KÉM' if kem else 'đạt'}")
+    # Fail-safe: KHÔNG đọc được traffic cũng tính là tuần kém — nếu tính là "đạt"
+    # thì khi API lỗi mãi, kill-switch sẽ không bao giờ cài được.
+    kem = uniques == -1 or uniques < nguong
+    nhan = {True: "KÉM", False: "đạt"}[kem]
+    print(f"Người dùng duy nhất 7 ngày: {uniques} (ngưỡng {nguong}) → {nhan}")
 
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(json.dumps({

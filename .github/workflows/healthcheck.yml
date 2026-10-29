@@ -27,7 +27,9 @@ jobs:
 
       - name: Kiểm tra người dùng + ngân sách, tự đóng nếu hết đường
         env:
-          GH_TOKEN: ${{ github.token }}
+          # Ưu tiên PAT (đọc được traffic API); thiếu thì dùng GITHUB_TOKEN
+          # (khi đó traffic trả 403 → tuần được tính KÉM theo fail-safe).
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
         run: python generator/healthcheck.py
 
       - name: Lưu nhật ký sức khoẻ
